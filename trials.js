@@ -10,10 +10,7 @@ const addresses = ["123 Main Street", "683 Sutter Street", "1600 Pennsylvania Av
 
 const phoneNumbers = new Map();
 
-
-
 // Add some phone numbers to our map
-
 phoneNumbers.set('home', '510-867-5309');
 phoneNumbers.set('mobile', '415-555-1212');
 phoneNumbers.set('business', '415-123-4567');
@@ -22,19 +19,15 @@ phoneNumbers.set('business', '415-123-4567');
 // Create User Info Display:
 
 // Add function to print account information 
-
 function printsInfo(name, number, businessName) {
-
   console.log(`Account Holder Name: ${name}`,
     `Account Holder Number: ${number}`,
     `Business Name: ${businessName}`);
 }   
 
+
 // Add function to print all addresses, including a header
-// Takes in a list of addresses as strings
-
 function showAddresses(address) {
-
   console.log('Addresses:');
 
   for (let i = 0; i < address.length; i += 1) {
@@ -47,7 +40,6 @@ function showAddresses(address) {
 // Takes a map of phone numbers 
 
 function showPhoneNums(numbers) {
-
   let numbers = phoneNumbers.entries();
 
   console.log('Phone Numbers: ');
@@ -63,7 +55,6 @@ function showPhoneNums(numbers) {
 // Transactions:
 
 // Create an empty map of transactions
-
 const accountTransactions = new Map();
 
 
@@ -81,12 +72,8 @@ addTransaction('May-21', -359);
 addTransaction('May-29', +2200);
 
 // Add function to show balance status
-
 function showBalanceStatus(balance) {
-
   console.log(`Balance: ${balance}`);
-
-
 
   if (balance < 0) {
     console.log('YOU ARE OVERDRAWN');
@@ -99,13 +86,12 @@ function showBalanceStatus(balance) {
   }
 }
 
+
 // Add function to show transactions
 
 function showTransactions(trMap, beginningBalance) {
-
   console.log(beginningBalance);
 
-  // accountTransactions map of date/amount
   let transArr = trMap.entries();
   let currentBalance = beginningBalance;
 
@@ -120,9 +106,9 @@ function showTransactions(trMap, beginningBalance) {
     }
 
     currentBalance = currentBalance - amount;
+
     console.log(date, type, amount, currentBalance);
   }
-
   console.log(showBalanceStatus(currentBalance));
 
   if (currentBalance < 0) {
@@ -131,13 +117,18 @@ function showTransactions(trMap, beginningBalance) {
   }  
 
   console.log(showBalanceStatus(currentBalance));
-  
 }
 
 // ///////////////////////////////////////////////////////
 // All Customer Info:
 
 // Make an object with customer info
+const customerData = {
+  accountHolder: accountHolder,
+  accountNumber: accountNumber,
+  businessName: businessName,
+  addresses: addresses
+}
 
 
 // Function to add customer attributes
